@@ -1,8 +1,9 @@
-import {Button, StyleSheet} from 'react-native';
-import React from 'react';
+import {Button, Pressable, StyleSheet, View} from 'react-native';
+import React, {FC, useMemo, useState} from 'react';
 import globalStyles, {height} from '../styles/globalstyles';
 import Animated, {
   BounceInLeft,
+  Easing,
   useAnimatedStyle,
   useSharedValue,
   withRepeat,
@@ -10,10 +11,96 @@ import Animated, {
   withSpring,
   withTiming,
 } from 'react-native-reanimated';
+import {MotiTransitionProp, MotiView} from 'moti';
+import colors from '../styles/colors';
+
 const BOX_WIDTH = 70;
+const trackSize = 70;
 const ANGLE = 30;
 
+interface switchProps {
+  size: number;
+  onPress: () => void;
+  isActive: boolean;
+}
+const transition: MotiTransitionProp = {
+  type: 'timing',
+  duration: 300,
+  easing: Easing.inOut(Easing.ease),
+};
+const Switch: FC<switchProps> = ({size, onPress, isActive}) => {
+  const trackWidth = useMemo(() => {
+    return size * 1.5;
+  }, [size]);
+  const trackHeigth = useMemo(() => {
+    return size * 0.4;
+  }, [size]);
+  const knobSize = useMemo(() => {
+    return size * 0.6;
+  }, [size]);
+  return (
+    <Pressable onPress={onPress}>
+      <View
+        style={[
+          globalStyles.justifyCenter,
+          globalStyles.alignCenter,
+          globalStyles.mt30,
+        ]}>
+        <MotiView
+          transition={transition}
+          from={{
+            backgroundColor: isActive ? colors.active : colors.inActive,
+          }}
+          style={[
+            globalStyles.ansolute,
+            {
+              width: trackWidth,
+              height: trackHeigth,
+              borderRadius: trackHeigth / 2,
+              backgroundColor: colors.active,
+            },
+          ]}
+        />
+        <MotiView
+          transition={transition}
+          from={{
+            translateX: isActive ? trackWidth / 4 : -trackWidth / 4,
+          }}
+          style={[
+            globalStyles.justifyCenter,
+            globalStyles.alignCenter,
+            {
+              width: size,
+              height: size,
+              borderRadius: size / 2,
+              backgroundColor: 'white',
+            },
+          ]}>
+          <MotiView
+            transition={transition}
+            from={{
+              width: isActive ? knobSize : 0,
+              borderColor: isActive ? colors.active : colors.inActive,
+            }}
+            style={[
+              {
+                // width: knobSize,
+                height: knobSize,
+                borderRadius: knobSize,
+                borderWidth: size * 0.1,
+                // borderColor: colors.active,
+                backgroundColor: 'white',
+              },
+            ]}
+          />
+        </MotiView>
+      </View>
+    </Pressable>
+  );
+};
+
 const Test = () => {
+  const [isActive, setIsActive] = useState(false);
   const offset = useSharedValue(0);
   const rotation = useSharedValue(0);
   const animatedStyles = useAnimatedStyle(() => {
@@ -42,9 +129,10 @@ const Test = () => {
       entering={BounceInLeft}
       style={[
         globalStyles.px20,
+        globalStyles.pt10,
         globalStyles.h10,
         globalStyles.w10,
-        globalStyles.justifyCenter,
+        // globalStyles.justifyCenter,
         {backgroundColor: 'white', height},
       ]}>
       <Animated.View style={[styles.box, animatedStyles]} />
@@ -60,6 +148,13 @@ const Test = () => {
             withTiming(0, {duration: 50}),
           );
           // withRepeat(withTiming(10), 6, true);
+        }}
+      />
+      <Switch
+        size={trackSize}
+        isActive={isActive}
+        onPress={() => {
+          setIsActive(!isActive);
         }}
       />
     </Animated.View>

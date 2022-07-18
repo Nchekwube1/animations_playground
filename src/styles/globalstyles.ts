@@ -1,6 +1,27 @@
 import {Dimensions, StyleSheet} from 'react-native';
 export const {height, width} = Dimensions.get('screen');
 const globalStyles = StyleSheet.create({
+  ansolute: {
+    position: 'absolute',
+  },
+  pt10: {
+    paddingTop: 10,
+  },
+  mt10: {
+    marginTop: 10,
+  },
+  mt20: {
+    marginTop: 20,
+  },
+  mt30: {
+    marginTop: 30,
+  },
+  mt40: {
+    marginTop: 40,
+  },
+  mt50: {
+    marginTop: 50,
+  },
   px10: {
     paddingHorizontal: 10,
   },
