@@ -1,7 +1,8 @@
-import {View, Button, StyleSheet} from 'react-native';
+import {Button, StyleSheet} from 'react-native';
 import React from 'react';
 import globalStyles, {height} from '../styles/globalstyles';
 import Animated, {
+  BounceInLeft,
   useAnimatedStyle,
   useSharedValue,
   withRepeat,
@@ -29,11 +30,16 @@ const Test = () => {
   });
   const animatedStyle = useAnimatedStyle(() => {
     return {
-      transform: [{rotateZ: withSpring(`${rotation.value}deg`)}],
+      transform: [
+        {
+          rotateZ: withSpring(`${rotation.value}deg`),
+        },
+      ],
     };
   });
   return (
-    <View
+    <Animated.View
+      entering={BounceInLeft}
       style={[
         globalStyles.px20,
         globalStyles.h10,
@@ -48,7 +54,6 @@ const Test = () => {
       <Button
         title="wobble"
         onPress={() => {
-          // rotation.value = Math.random() * 180
           rotation.value = withSequence(
             withTiming(-ANGLE, {duration: 50}),
             withRepeat(withTiming(ANGLE, {duration: 100}), 6, true),
@@ -57,7 +62,7 @@ const Test = () => {
           // withRepeat(withTiming(10), 6, true);
         }}
       />
-    </View>
+    </Animated.View>
   );
 };
 
