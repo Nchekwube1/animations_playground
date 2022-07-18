@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-
+import {Dimensions, StyleSheet} from 'react-native';
+export const {height, width} = Dimensions.get('screen');
 const globalStyles = StyleSheet.create({
   px10: {
     paddingHorizontal: 10,
@@ -61,6 +61,20 @@ const globalStyles = StyleSheet.create({
   h10: {
     height: '100%',
   },
+  w10: {
+    width: '100%',
+  },
+  flex: {
+    display: 'flex',
+  },
+  flexColumn: {
+    flexDirection: 'column',
+  },
+  flexRow: {
+    flexDirection: 'row',
+  },
+  justifyCenter: {justifyContent: 'center'},
+  alignCenter: {alignItems: 'center'},
 });
 
 export default globalStyles;
