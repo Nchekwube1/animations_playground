@@ -11,12 +11,14 @@
 import React from 'react';
 import {SafeAreaView, StatusBar, StyleSheet, View} from 'react-native';
 import {getStatusBarHeight} from 'react-native-iphone-x-helper';
+import Test from './src/screens/Test';
 const STATUSBAR_HEIGHT = getStatusBarHeight();
 const App = () => {
   return (
     <View style={{...StyleSheet.absoluteFillObject}}>
       <SafeAreaView style={{height: STATUSBAR_HEIGHT, backgroundColor: 'red'}}>
         <StatusBar barStyle={'light-content'} />
+        <Test />
       </SafeAreaView>
     </View>
   );

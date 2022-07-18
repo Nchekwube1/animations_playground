@@ -31,6 +31,36 @@ const globalStyles = StyleSheet.create({
   py50: {
     paddingHorizontal: 50,
   },
+  h1: {
+    height: '10%',
+  },
+  h2: {
+    height: '20%',
+  },
+  h3: {
+    height: '30%',
+  },
+  h4: {
+    height: '40%',
+  },
+  h5: {
+    height: '50%',
+  },
+  h6: {
+    height: '60%',
+  },
+  h7: {
+    height: '70%',
+  },
+  h8: {
+    height: '80%',
+  },
+  h9: {
+    height: '90%',
+  },
+  h10: {
+    height: '100%',
+  },
 });
 
 export default globalStyles;
