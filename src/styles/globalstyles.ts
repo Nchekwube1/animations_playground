@@ -1,6 +1,8 @@
-import {Dimensions, StyleSheet} from 'react-native';
+import {Dimensions} from 'react-native';
+import {ScaledSheet} from 'react-native-size-matters';
+import colors from './colors';
 export const {height, width} = Dimensions.get('screen');
-const globalStyles = StyleSheet.create({
+const globalStyles = ScaledSheet.create({
   ansolute: {
     position: 'absolute',
   },
@@ -93,6 +95,37 @@ const globalStyles = StyleSheet.create({
   },
   flexRow: {
     flexDirection: 'row',
+  },
+  textBlack: {color: colors.black},
+  fontMontserratAltRegular: {
+    fontFamily: 'MontserratAlternates-Regular',
+  },
+  textSizeXs: {
+    fontSize: '11@s',
+  },
+  textSizeSmall: {
+    fontSize: '13@s',
+  },
+  textSizeNormal: {
+    fontSize: '14@s',
+  },
+  textSizeMedium: {
+    fontSize: '16@s',
+  },
+  textSizeBig: {
+    fontSize: '18@s',
+  },
+  textSize1xl: {
+    fontSize: '20@s',
+  },
+  textSize2xl: {
+    fontSize: '24@s',
+  },
+  textSize3xl: {
+    fontSize: '30@s',
+  },
+  textSize4xl: {
+    fontSize: '36@s',
   },
   justifyCenter: {justifyContent: 'center'},
   alignCenter: {alignItems: 'center'},

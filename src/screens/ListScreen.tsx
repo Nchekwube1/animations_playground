@@ -1,6 +1,7 @@
 import {View, Text, StyleSheet} from 'react-native';
 import React, {useEffect} from 'react';
 import globalStyles, {height} from '../styles/globalstyles';
+import TextComponent from '../components/TextComponent';
 
 const ListScreen = () => {
   useEffect(() => {
@@ -18,15 +19,14 @@ const ListScreen = () => {
           ...StyleSheet.absoluteFillObject,
         },
       ]}>
-      <Text>ListScreen</Text>
-      <Text>ListScreen</Text>
-      <Text>ListScreen</Text>
-      <Text>ListScreen</Text>
-      <Text>ListScreen</Text>
-      <Text>ListScreen</Text>
-      <Text>ListScreen</Text>
-      <Text>ListScreen</Text>
-      <Text>ListScreen</Text>
+      <TextComponent>ListScreen</TextComponent>
+      <TextComponent>ListScreen</TextComponent>
+      <TextComponent>ListScreen</TextComponent>
+      <TextComponent>ListScreen</TextComponent>
+      <TextComponent>ListScreen</TextComponent>
+      <TextComponent>ListScreen</TextComponent>
+      <TextComponent>ListScreen</TextComponent>
+      <TextComponent>ListScreen</TextComponent>
     </View>
   );
 };
