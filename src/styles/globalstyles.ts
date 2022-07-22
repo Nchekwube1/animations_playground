@@ -6,6 +6,9 @@ const globalStyles = ScaledSheet.create({
   ansolute: {
     position: 'absolute',
   },
+  bgDark: {
+    backgroundColor: colors.bg,
+  },
   pt10: {
     paddingTop: 10,
   },
@@ -97,6 +100,7 @@ const globalStyles = ScaledSheet.create({
     flexDirection: 'row',
   },
   textBlack: {color: colors.black},
+  textWhite: {color: colors.white},
   fontMontserratAltRegular: {
     fontFamily: 'MontserratAlternates-Regular',
   },
@@ -128,7 +132,11 @@ const globalStyles = ScaledSheet.create({
     fontSize: '36@s',
   },
   justifyCenter: {justifyContent: 'center'},
+  justifyBetweem: {justifyContent: 'space-between'},
   alignCenter: {alignItems: 'center'},
+  borderradius: {borderRadius: 10},
+  absolute: {position: 'absolute'},
+  relative: {position: 'relative'},
 });
 
 export default globalStyles;

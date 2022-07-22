@@ -3,6 +3,8 @@ const colors = {
   inActive: '#dcdcdc',
   black: '#000',
   white: '#fff',
+  bg: '#28252d',
+  purple: '#b7aaff',
 };
 
 export default colors;

@@ -12,7 +12,7 @@ const TextComponent: FC<textProps> = ({style, numberOfLines, children}) => {
       numberOfLines={numberOfLines}
       style={[
         globalStyles.textSizeNormal,
-        globalStyles.textBlack,
+        globalStyles.textWhite,
         globalStyles.fontMontserratAltRegular,
         style,
       ]}>
