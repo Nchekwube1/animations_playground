@@ -12,6 +12,12 @@ const globalStyles = ScaledSheet.create({
   pt10: {
     paddingTop: 10,
   },
+  pt20: {
+    paddingTop: 20,
+  },
+  pt30: {
+    paddingTop: 30,
+  },
   mt10: {
     marginTop: 10,
   },
@@ -26,6 +32,21 @@ const globalStyles = ScaledSheet.create({
   },
   mt50: {
     marginTop: 50,
+  },
+  mb50: {
+    marginBottom: 50,
+  },
+  mb40: {
+    marginBottom: 40,
+  },
+  mb30: {
+    marginBottom: 30,
+  },
+  mb20: {
+    marginBottom: 20,
+  },
+  mb10: {
+    marginBottom: 10,
   },
   px10: {
     paddingHorizontal: 10,
@@ -43,19 +64,19 @@ const globalStyles = ScaledSheet.create({
     paddingHorizontal: 50,
   },
   py10: {
-    paddingHorizontal: 10,
+    paddingVertical: 10,
   },
   py20: {
-    paddingHorizontal: 20,
+    paddingVertical: 20,
   },
   py30: {
-    paddingHorizontal: 30,
+    paddingVertical: 30,
   },
   py40: {
-    paddingHorizontal: 40,
+    paddingVertical: 40,
   },
   py50: {
-    paddingHorizontal: 50,
+    paddingVertical: 50,
   },
   h1: {
     height: '10%',
@@ -89,6 +110,33 @@ const globalStyles = ScaledSheet.create({
   },
   w10: {
     width: '100%',
+  },
+  w9: {
+    width: '90%',
+  },
+  w8: {
+    width: '80%',
+  },
+  w7: {
+    width: '70%',
+  },
+  w6: {
+    width: '60%',
+  },
+  w5: {
+    width: '50%',
+  },
+  w4: {
+    width: '40%',
+  },
+  w3: {
+    width: '30%',
+  },
+  w2: {
+    width: '20%',
+  },
+  w1: {
+    width: '10%',
   },
   flex: {
     display: 'flex',
@@ -137,6 +185,15 @@ const globalStyles = ScaledSheet.create({
   borderradius: {borderRadius: 10},
   absolute: {position: 'absolute'},
   relative: {position: 'relative'},
+  borderGreen: {
+    borderColor: colors.lemon,
+  },
+  colorGreen: {
+    color: colors.lemon,
+  },
+  marRight: {
+    marginRight: 6,
+  },
 });
 
 export default globalStyles;
