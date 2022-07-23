@@ -11,7 +11,7 @@ import {MotiTransitionProp, MotiView} from 'moti';
 import {ScrollView} from 'react-native-gesture-handler';
 import TextComponent from '../components/TextComponent';
 import {useNavigation} from '@react-navigation/native';
-
+import {SharedElement} from 'react-navigation-shared-element';
 const ListScreen = () => {
   const [isActive, setIsActive] = useState(false);
   const {navigate} = useNavigation();
@@ -144,24 +144,27 @@ const ListScreen = () => {
                     marginRight: 6,
                   },
                 ]}>
-                <View
-                  style={[
-                    globalStyles.w10,
-                    globalStyles.h7,
-                    globalStyles.borderradius,
-                  ]}>
-                  <Image
-                    source={{uri: item.imageUrl[0]}}
+                <SharedElement id={`${item.id}`}>
+                  <View
                     style={[
                       globalStyles.w10,
-                      globalStyles.h10,
-                      {
-                        borderTopLeftRadius: 10,
-                        borderTopRightRadius: 10,
-                      },
-                    ]}
-                  />
-                </View>
+                      globalStyles.h7,
+                      globalStyles.borderradius,
+                    ]}>
+                    <Image
+                      source={{uri: item.imageUrl[0]}}
+                      style={[
+                        globalStyles.w10,
+                        globalStyles.h10,
+                        {
+                          borderTopLeftRadius: 10,
+                          borderTopRightRadius: 10,
+                        },
+                      ]}
+                    />
+                  </View>
+                </SharedElement>
+
                 <View
                   style={[
                     globalStyles.flexRow,

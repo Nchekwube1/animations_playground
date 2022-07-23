@@ -8,6 +8,7 @@ import TextComponent from '../components/TextComponent';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {MotiTransitionProp, MotiView} from 'moti';
+import {SharedElement} from 'react-navigation-shared-element';
 
 const DetailScreen = () => {
   const {params} = useRoute();
@@ -21,6 +22,11 @@ const DetailScreen = () => {
     type: 'timing',
     duration: 500,
     easing: Easing.inOut(Easing.linear),
+  };
+  const transition2: MotiTransitionProp = {
+    type: 'timing',
+    duration: 500,
+    easing: Easing.in(Easing.bounce),
   };
   return (
     <ScrollView
@@ -38,8 +44,17 @@ const DetailScreen = () => {
           flex: 1,
         },
       ]}>
-      <Animated.View
-        entering={SlideInRight}
+      <MotiView
+        transition={transition2}
+        from={{
+          transform: [{translateY: -20}],
+          opacity: 0,
+        }}
+        animate={{
+          transform: [{translateY: 0}],
+          opacity: 1,
+        }}
+        delay={750}
         style={[
           globalStyles.flex,
           globalStyles.flexRow,
@@ -54,7 +69,7 @@ const DetailScreen = () => {
         </TouchableOpacity>
         <TextComponent style={{fontSize: 24}}>Details</TextComponent>
         <FontAwesome5 name="shopping-bag" color={colors.white} size={22} />
-      </Animated.View>
+      </MotiView>
       <View
         style={[
           globalStyles.w10,
@@ -94,16 +109,18 @@ const DetailScreen = () => {
             </TextComponent>
           </MotiView>
         </MotiView>
-        <Animated.Image
-          source={{uri: params?.imageUrl[currentImage]}}
-          resizeMode="cover"
-          style={[
-            globalStyles.w10,
-            globalStyles.h10,
-            globalStyles.borderradius,
-            globalStyles.relative,
-          ]}
-        />
+        <SharedElement id={` ${params?.id}`}>
+          <Animated.Image
+            source={{uri: params?.imageUrl[currentImage]}}
+            resizeMode="cover"
+            style={[
+              globalStyles.w10,
+              globalStyles.h10,
+              globalStyles.borderradius,
+              globalStyles.relative,
+            ]}
+          />
+        </SharedElement>
       </View>
       <View
         style={[
@@ -116,24 +133,32 @@ const DetailScreen = () => {
         {params.imageUrl.map((item, index) => {
           return (
             <TouchableOpacity
+              style={{width: '30%'}}
               key={`${item}-${index}`}
               onPress={() => {
                 setCurrentImage(index);
-              }}
-              style={[
-                globalStyles.h10,
-                index === currentImage && globalStyles.borderGreen,
-                {
-                  width: '30%',
-                  borderRadius: 14,
-                  borderWidth: 4,
-                },
-              ]}>
-              <Image
-                source={{uri: item}}
-                style={[globalStyles.w10, globalStyles.h10, {borderRadius: 8}]}
-                resizeMode="cover"
-              />
+              }}>
+              <MotiView
+                style={[
+                  globalStyles.h10,
+                  {
+                    width: '100%',
+                    borderRadius: 14,
+                    borderWidth: 4,
+                    borderColor: 'rgba(73,72,82,255)',
+                  },
+                  index === currentImage && globalStyles.borderGreen,
+                ]}>
+                <Image
+                  source={{uri: item}}
+                  style={[
+                    globalStyles.w10,
+                    globalStyles.h10,
+                    {borderRadius: 8},
+                  ]}
+                  resizeMode="cover"
+                />
+              </MotiView>
             </TouchableOpacity>
           );
         })}
@@ -228,5 +253,16 @@ const DetailScreen = () => {
     </ScrollView>
   );
 };
+
+// DetailScreen.sharedElements = route => {
+//   const {item} = route.params;
+//   return [
+//     {
+//       id: `${item?.imageUrl[0]}`,
+//       animation: 'move',
+//       resize: 'clip',
+//     },
+//   ];
+// };
 
 export default DetailScreen;

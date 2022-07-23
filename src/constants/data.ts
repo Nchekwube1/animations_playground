@@ -4,6 +4,7 @@ interface data {
   title: string;
   desc: string;
   price: string;
+  id: string;
 }
 
 export const data: data[] = [
@@ -17,6 +18,7 @@ export const data: data[] = [
     desc: 'Very comfortable and affordable tees',
     price: '$450',
     sizes: ['XL', 'S', 'M', 'L', 'XL', 'XS'],
+    id: '1',
   },
   {
     imageUrl: [
@@ -28,6 +30,7 @@ export const data: data[] = [
     desc: 'Look classy and stylish this winter',
     price: '$247',
     sizes: ['XL', 'S', 'M', 'L', 'XL', 'XS'],
+    id: '2',
   },
   {
     imageUrl: [
@@ -39,6 +42,7 @@ export const data: data[] = [
     desc: 'Balenciaga crop top',
     price: '$735',
     sizes: ['XL', 'S', 'M', 'L', 'XL', 'XS'],
+    id: '3',
   },
   {
     imageUrl: [
@@ -50,6 +54,7 @@ export const data: data[] = [
     desc: 'Silky soft beenie',
     price: '$130',
     sizes: ['XL', 'S', 'M', 'L', 'XL', 'XS'],
+    id: '4',
   },
   {
     imageUrl: [
@@ -61,6 +66,7 @@ export const data: data[] = [
     desc: 'Highest quality denim jeans',
     price: '$750',
     sizes: ['XL', 'S', 'M', 'L', 'XL', 'XS'],
+    id: '5',
   },
   {
     imageUrl: [
@@ -72,6 +78,7 @@ export const data: data[] = [
     desc: 'Silky soft towels for men',
     price: '$346',
     sizes: ['XL', 'S', 'M', 'L', 'XL', 'XS'],
+    id: '6',
   },
 ];
 export const logoUrls = [
