@@ -51,7 +51,7 @@ const ListScreen = () => {
           globalStyles.flex,
           globalStyles.flexRow,
           globalStyles.justifyBetweem,
-          globalStyles.mt10,
+          // globalStyles.mt10,
         ]}>
         <Ionicons name="menu-outline" color={colors.white} size={30} />
         <FontAwesome5 name="shopping-bag" color={colors.white} size={22} />

@@ -1,8 +1,14 @@
 import {View, ScrollView, TouchableOpacity, Image} from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {useNavigation, useRoute} from '@react-navigation/native';
-import Animated, {Easing, SlideInRight} from 'react-native-reanimated';
-import globalStyles from '../styles/globalstyles';
+import Animated, {
+  Easing,
+  Extrapolate,
+  interpolate,
+  useAnimatedStyle,
+  useSharedValue,
+} from 'react-native-reanimated';
+import globalStyles, {height} from '../styles/globalstyles';
 import colors from '../styles/colors';
 import TextComponent from '../components/TextComponent';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -15,9 +21,19 @@ const DetailScreen = () => {
   const {goBack} = useNavigation();
   const [currentImage, setCurrentImage] = useState(0);
   const [currentSize, setCurrentSize] = useState(0);
-  useEffect(() => {
-    console.log(params.id);
-  }, [params]);
+  const translateX = useSharedValue(0);
+  const translateY = useSharedValue(0);
+  // const onGestureEvent = useAnimatedGestureHandler({
+  //   onActive: ({translationX, translationY}) => {
+  //     translateX.value = translationX;
+  //     translateY.value = translationY;
+  //   },
+  //   onEnd: ({translationX, translationY}) => {
+  //     translateX.value = withSpring(0);
+  //     translateY.value = withSpring(0);
+  //   },
+  // });
+
   const transition: MotiTransitionProp = {
     type: 'timing',
     duration: 500,
@@ -28,6 +44,30 @@ const DetailScreen = () => {
     duration: 500,
     easing: Easing.in(Easing.bounce),
   };
+  const style = useAnimatedStyle(() => {
+    const scale = interpolate(
+      translateY.value,
+      [0, height],
+      [1, 0, 5],
+      Extrapolate.CLAMP,
+    );
+    return {
+      // position: 'absolute',
+      zIndex: 200,
+      transform: [
+        {
+          translateX: translateX.value * scale,
+        },
+        {
+          translateY: translateY.value * scale,
+        },
+
+        {
+          scale,
+        },
+      ],
+    };
+  });
   return (
     <ScrollView
       bounces={false}
@@ -111,6 +151,7 @@ const DetailScreen = () => {
           </MotiView>
         </MotiView>
         <SharedElement id={`${params?.id}`}>
+          {/* <PanGestureHandler onGestureEvent={onGestureEvent}> */}
           <Animated.Image
             source={{uri: params?.imageUrl[currentImage]}}
             resizeMode="cover"
@@ -119,8 +160,10 @@ const DetailScreen = () => {
               globalStyles.h10,
               globalStyles.borderradius,
               globalStyles.relative,
+              style,
             ]}
           />
+          {/* </PanGestureHandler> */}
         </SharedElement>
       </View>
       <View
@@ -228,7 +271,8 @@ const DetailScreen = () => {
         style={[
           globalStyles.relative,
           {
-            bottom: -60,
+            // bottom: -60,
+            marginBottom: 30,
           },
         ]}>
         <TouchableOpacity

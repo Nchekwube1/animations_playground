@@ -10,7 +10,13 @@ import 'react-native-gesture-handler';
  */
 
 import React from 'react';
-import {SafeAreaView, StatusBar, View} from 'react-native';
+import {
+  Platform,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  View,
+} from 'react-native';
 import {getStatusBarHeight} from 'react-native-iphone-x-helper';
 import Test from './src/screens/Test';
 import {height, width} from './src/styles/globalstyles';
@@ -20,11 +26,21 @@ import colors from './src/styles/colors';
 const STATUSBAR_HEIGHT = getStatusBarHeight();
 const App = () => {
   return (
-    <View style={{width, height, backgroundColor: colors.bg}}>
-      <SafeAreaView
-        style={{height: STATUSBAR_HEIGHT, backgroundColor: colors.bg}}>
+    <View
+      style={{
+        width,
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor: colors.bg,
+      }}>
+      {Platform.OS === 'ios' && (
+        <SafeAreaView
+          style={{height: STATUSBAR_HEIGHT, backgroundColor: colors.bg}}>
+          <StatusBar barStyle={'light-content'} backgroundColor={colors.bg} />
+        </SafeAreaView>
+      )}
+      {Platform.OS === 'android' && (
         <StatusBar barStyle={'light-content'} backgroundColor={colors.bg} />
-      </SafeAreaView>
+      )}
       <NavigationContainer>
         {/* <Test /> */}
         <SharedNavigation />

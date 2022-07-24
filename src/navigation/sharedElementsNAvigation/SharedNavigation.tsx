@@ -31,12 +31,12 @@ const SharedNavigation = () => {
       <Stack.Screen
         name="DetailScreen"
         component={DetailScreen}
-        options={{
-          transitionSpec: {
-            open: config,
-            close: config,
-          },
-        }}
+        // options={{
+        //   transitionSpec: {
+        //     open: config,
+        //     close: config,
+        //   },
+        // }}
         sharedElements={route => {
           return [route.params.id];
         }}
