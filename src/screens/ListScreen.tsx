@@ -128,92 +128,96 @@ const ListScreen = () => {
             globalStyles.mt30,
             {backgroundColor: 'transparent', flex: 1},
           ]}
-          renderItem={({item, index}) => (
-            <TouchableOpacity onPress={() => navigate('DetailScreen', item)}>
-              <Animated.View
-                style={[
-                  globalStyles.borderradius,
-                  globalStyles.mb20,
-                  // index % 2 === 0 && globalStyles.marRight,
-                  {
-                    width: width / 2 - 23,
-                    height: 245,
-                    backgroundColor: colors.transparent,
-                    borderColor: colors.inActive,
-                    borderWidth: 1,
-                    marginRight: 6,
-                  },
-                ]}>
-                <SharedElement id={`${item.id}`}>
-                  <View
-                    style={[
-                      globalStyles.w10,
-                      globalStyles.h7,
-                      globalStyles.borderradius,
-                    ]}>
-                    <Image
-                      source={{uri: item.imageUrl[0]}}
+          renderItem={({item}) => {
+            return (
+              <TouchableOpacity onPress={() => navigate('DetailScreen', item)}>
+                <Animated.View
+                  style={[
+                    globalStyles.borderradius,
+                    globalStyles.mb20,
+                    // index % 2 === 0 && globalStyles.marRight,
+                    {
+                      width: width / 2 - 23,
+                      height: 245,
+                      backgroundColor: colors.transparent,
+                      borderColor: colors.inActive,
+                      borderWidth: 1,
+                      marginRight: 6,
+                    },
+                  ]}>
+                  <SharedElement
+                    style={[globalStyles.w10, globalStyles.h7]}
+                    id={`${item.id}`}>
+                    <View
                       style={[
                         globalStyles.w10,
                         globalStyles.h10,
-                        {
-                          borderTopLeftRadius: 10,
-                          borderTopRightRadius: 10,
-                        },
-                      ]}
-                    />
-                  </View>
-                </SharedElement>
+                        globalStyles.borderradius,
+                      ]}>
+                      <Image
+                        source={{uri: item.imageUrl[0]}}
+                        style={[
+                          globalStyles.w10,
+                          globalStyles.h10,
+                          {
+                            borderTopLeftRadius: 10,
+                            borderTopRightRadius: 10,
+                          },
+                        ]}
+                      />
+                    </View>
+                  </SharedElement>
 
-                <View
-                  style={[
-                    globalStyles.flexRow,
-                    globalStyles.flex,
-                    globalStyles.px10,
-                    globalStyles.py10,
-                    globalStyles.relative,
-                    // globalStyles.h10,
-                  ]}>
-                  <View style={[globalStyles.w7]}>
-                    <TextComponent>{item.title}</TextComponent>
-                    {/* <TextComponent>{item.desc}</TextComponent> */}
-                    <TextComponent style={{color: colors.lemon}}>
-                      {item.price}
-                    </TextComponent>
-                  </View>
                   <View
                     style={[
-                      globalStyles.w3,
+                      globalStyles.flexRow,
+                      globalStyles.flex,
+                      globalStyles.px10,
+                      globalStyles.py10,
+                      globalStyles.relative,
                       // globalStyles.h10,
-                      globalStyles.justifyCenter,
-                      globalStyles.alignCenter,
                     ]}>
-                    <TouchableOpacity
+                    <View style={[globalStyles.w7]}>
+                      <TextComponent>{item.title}</TextComponent>
+                      {/* <TextComponent>{item.desc}</TextComponent> */}
+                      <TextComponent style={{color: colors.lemon}}>
+                        {item.price}
+                      </TextComponent>
+                    </View>
+                    <View
                       style={[
-                        globalStyles.w9,
-                        globalStyles.py10,
+                        globalStyles.w3,
+                        // globalStyles.h10,
                         globalStyles.justifyCenter,
                         globalStyles.alignCenter,
-                        // globalStyles.h5,
-                        {
-                          // backgroundColor: 'transparent',
-                          backgroundColor: colors.check,
-                          borderColor: colors.inActive,
-                          borderWidth: 1,
-                          borderRadius: 40,
-                        },
                       ]}>
-                      <Feather
-                        name="shopping-bag"
-                        color={colors.white}
-                        size={22}
-                      />
-                    </TouchableOpacity>
+                      <TouchableOpacity
+                        style={[
+                          globalStyles.w9,
+                          globalStyles.py10,
+                          globalStyles.justifyCenter,
+                          globalStyles.alignCenter,
+                          // globalStyles.h5,
+                          {
+                            // backgroundColor: 'transparent',
+                            backgroundColor: colors.check,
+                            borderColor: colors.inActive,
+                            borderWidth: 1,
+                            borderRadius: 40,
+                          },
+                        ]}>
+                        <Feather
+                          name="shopping-bag"
+                          color={colors.white}
+                          size={22}
+                        />
+                      </TouchableOpacity>
+                    </View>
                   </View>
-                </View>
-              </Animated.View>
-            </TouchableOpacity>
-          )}
+                </Animated.View>
+              </TouchableOpacity>
+            );
+          }}
         />
       </View>
     </ScrollView>

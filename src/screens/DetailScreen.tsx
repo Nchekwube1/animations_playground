@@ -16,7 +16,7 @@ const DetailScreen = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [currentSize, setCurrentSize] = useState(0);
   useEffect(() => {
-    console.log({params});
+    console.log(params.id);
   }, [params]);
   const transition: MotiTransitionProp = {
     type: 'timing',
@@ -109,7 +109,7 @@ const DetailScreen = () => {
             </TextComponent>
           </MotiView>
         </MotiView>
-        <SharedElement id={` ${params?.id}`}>
+        <SharedElement id={`${params?.id}`}>
           <Animated.Image
             source={{uri: params?.imageUrl[currentImage]}}
             resizeMode="cover"
