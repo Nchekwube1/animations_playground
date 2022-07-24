@@ -95,8 +95,9 @@ const DetailScreen = () => {
           ]}>
           <MotiView
             transition={transition}
-            from={{top: 20, opacity: 0}}
+            from={{top: -20, opacity: 0}}
             animate={{top: 0, opacity: 1}}
+            delay={400}
             style={[
               globalStyles.w10,
               globalStyles.h10,
