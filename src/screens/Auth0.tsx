@@ -1,14 +1,16 @@
-import {View, Button, Text} from 'react-native';
+import {View, Button, Text, NativeModules} from 'react-native';
 import React, {useEffect} from 'react';
 import {useAuth0} from 'react-native-auth0';
-
+import CalendarModule from '../constants/CalenderModuleInstance';
 const Auth0 = () => {
   const {authorize, user, clearSession} = useAuth0();
+
   useEffect(() => {
     console.log({user});
   }, [user]);
   const onPress = async () => {
-    await authorize();
+    // await authorize();
+    CalendarModule.createCalendarEvent('testName', 'testLocation');
   };
   const logout = async () => {
     console.log('clear session');
