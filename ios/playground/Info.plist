@@ -29,9 +29,7 @@
 			<string>auth0</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-			 <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-				<!-- <string>org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)</string> -->
-				<!-- <string>org.reactjs.native.example.playground:rfc1034identifier</string> -->
+				<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 			</array>
 		</dict>
 	</array>
@@ -51,7 +49,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>
@@ -70,11 +68,19 @@
 		<string>Octicons.ttf</string>
 		<string>Zocial.ttf</string>
 		<string>Fontisto.ttf</string>
-		<string>Macondo-Regular.ttf</string>
-		<string>MontserratAlternates-Bold.ttf</string>
-		<string>MontserratAlternates-Medium.ttf</string>
-		<string>MontserratAlternates-Regular.ttf</string>
-		<string>PermanentMarker-Regular.ttf</string>
+		<string>DarkerGrotesque-Black.ttf</string>
+		<string>DarkerGrotesque-Bold.ttf</string>
+		<string>DarkerGrotesque-ExtraBold.ttf</string>
+		<string>DarkerGrotesque-Light.ttf</string>
+		<string>DarkerGrotesque-Medium.ttf</string>
+		<string>DarkerGrotesque-Regular.ttf</string>
+		<string>DarkerGrotesque-SemiBold.ttf</string>
+		<string>Inter-Black.ttf</string>
+		<string>Inter-Bold.ttf</string>
+		<string>Inter-ExtraBold.ttf</string>
+		<string>Inter-Medium.ttf</string>
+		<string>Inter-Regular.ttf</string>
+		<string>Inter-SemiBold.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

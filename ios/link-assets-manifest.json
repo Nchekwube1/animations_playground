@@ -1,0 +1,57 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/DarkerGrotesque-Black.ttf",
+      "sha1": "0b9942a52f995ab72a5277aba0bada8b2adc215f"
+    },
+    {
+      "path": "src/assets/fonts/DarkerGrotesque-Bold.ttf",
+      "sha1": "8801ec842a079bf4bc5c14ff19c91e54e26e4250"
+    },
+    {
+      "path": "src/assets/fonts/DarkerGrotesque-ExtraBold.ttf",
+      "sha1": "81f6c844b1a357d0d712f88810d18beb31fb739a"
+    },
+    {
+      "path": "src/assets/fonts/DarkerGrotesque-Light.ttf",
+      "sha1": "dd6a7818cc058600612a212de74e62be910d2d86"
+    },
+    {
+      "path": "src/assets/fonts/DarkerGrotesque-Medium.ttf",
+      "sha1": "3bb055f16b5e4ac124d6dd280fa9f981836ff9cb"
+    },
+    {
+      "path": "src/assets/fonts/DarkerGrotesque-Regular.ttf",
+      "sha1": "dfd5d99791341f3f61de76783e9fb2926a7109fc"
+    },
+    {
+      "path": "src/assets/fonts/DarkerGrotesque-SemiBold.ttf",
+      "sha1": "c0e82add8e61b8f259859b05d682590263ca6495"
+    },
+    {
+      "path": "src/assets/fonts/Inter-Black.ttf",
+      "sha1": "a5a6ebe18c63d0bf218ff7f65646e67e25ea5eea"
+    },
+    {
+      "path": "src/assets/fonts/Inter-Bold.ttf",
+      "sha1": "444cdca680f8ce64c16fe5a606dcfbe4b33e7925"
+    },
+    {
+      "path": "src/assets/fonts/Inter-ExtraBold.ttf",
+      "sha1": "7547e67ff62f82c640e3075248bc6c822aee0855"
+    },
+    {
+      "path": "src/assets/fonts/Inter-Medium.ttf",
+      "sha1": "9674d43c8207459a432863c47c3858d2244c19ec"
+    },
+    {
+      "path": "src/assets/fonts/Inter-Regular.ttf",
+      "sha1": "c2767d146c3c10fe6c9b8ac0f181ef907c111f19"
+    },
+    {
+      "path": "src/assets/fonts/Inter-SemiBold.ttf",
+      "sha1": "acda92adc6cf8c67c89395c65f371a4d2b05a783"
+    }
+  ]
+}

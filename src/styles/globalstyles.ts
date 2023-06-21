@@ -1,13 +1,35 @@
 import {Dimensions} from 'react-native';
 import {ScaledSheet} from 'react-native-size-matters';
 import colors from './colors';
+import {getStatusBarHeight} from 'react-native-iphone-x-helper';
+import palette from '../constants/palette/palette';
 export const {height, width} = Dimensions.get('screen');
 const globalStyles = ScaledSheet.create({
+  mtHeight: {
+    marginTop: getStatusBarHeight() + 5,
+  },
+  ptHeight: {
+    paddingTop: getStatusBarHeight() + 5,
+  },
+  shadow: {
+    elevation: 1,
+    zIndex: 10,
+    shadowColor: palette.secondaryText,
+    shadowOpacity: 0.1,
+    shadowRadius: 7,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+  },
   ansolute: {
     position: 'absolute',
   },
   bgDark: {
     backgroundColor: colors.bg,
+  },
+  bgBlack: {
+    backgroundColor: colors.black,
   },
   pt10: {
     paddingTop: 10,
@@ -141,6 +163,9 @@ const globalStyles = ScaledSheet.create({
   flex: {
     display: 'flex',
   },
+  flexOne: {
+    flex: 1,
+  },
   flexColumn: {
     flexDirection: 'column',
   },
@@ -178,6 +203,57 @@ const globalStyles = ScaledSheet.create({
   },
   textSize4xl: {
     fontSize: '36@s',
+  },
+  fontSize8: {
+    fontSize: '8@s',
+  },
+  fontSize9: {
+    fontSize: '9@s',
+  },
+  fontSize10: {
+    fontSize: '10@s',
+  },
+  fontSize11: {
+    fontSize: '11@s',
+  },
+  fontSize12: {
+    fontSize: '12@s',
+  },
+  fontSize13: {
+    fontSize: '13@s',
+  },
+  fontSize14: {
+    fontSize: '14@s',
+  },
+  fontSize15: {
+    fontSize: '15@s',
+  },
+  fontSize16: {
+    fontSize: '16@s',
+  },
+  fontSize17: {
+    fontSize: '17@s',
+  },
+  fontSize18: {
+    fontSize: '18@s',
+  },
+  fontSize19: {
+    fontSize: '19@s',
+  },
+  fontSize20: {
+    fontSize: '20@s',
+  },
+  fontSize22: {
+    fontSize: '22@s',
+  },
+  fontSize24: {
+    fontSize: '24@s',
+  },
+  fontSize26: {
+    fontSize: '26@s',
+  },
+  fontSize30: {
+    fontSize: '30@s',
   },
   justifyCenter: {justifyContent: 'center'},
   justifyBetweem: {justifyContent: 'space-between'},
