@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import React, {useMemo} from 'react';
 import palette from '../../../constants/palette/palette';
-import globalStyles, {height, width} from '../../../styles/globalstyles';
+import globalStyles, {width} from '../../../styles/globalstyles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -19,10 +19,8 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
-  withSpring,
   withTiming,
 } from 'react-native-reanimated';
-import TextComponent from '../../../components/TextComponent';
 const MessageHome = () => {
   const translateX = useSharedValue(-width);
   const messages = useMemo(

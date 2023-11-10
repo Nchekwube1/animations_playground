@@ -8,8 +8,14 @@ const globalStyles = ScaledSheet.create({
   mtHeight: {
     marginTop: getStatusBarHeight() + 5,
   },
+  br: {
+    borderRadius: '500@s',
+  },
   ptHeight: {
     paddingTop: getStatusBarHeight() + 5,
+  },
+  w3p3: {
+    width: '33%',
   },
   shadow: {
     elevation: 1,
@@ -28,8 +34,14 @@ const globalStyles = ScaledSheet.create({
   bgDark: {
     backgroundColor: colors.bg,
   },
+  bgWHite: {
+    backgroundColor: colors.white,
+  },
   bgBlack: {
     backgroundColor: colors.black,
+  },
+  bgGray: {
+    backgroundColor: colors.inActive,
   },
   pt10: {
     paddingTop: 10,

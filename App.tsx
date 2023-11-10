@@ -9,7 +9,7 @@ import 'react-native-gesture-handler';
  * @format
  */
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   Platform,
   SafeAreaView,
@@ -23,10 +23,40 @@ import {NavigationContainer} from '@react-navigation/native';
 import SharedNavigation from './src/navigation/sharedElementsNAvigation/SharedNavigation';
 import colors from './src/styles/colors';
 import MessageHome from './src/navigation/sharedElementsNAvigation/message/MessageHome';
+import FlatlistAnimation from './src/screens/FlatlistAnimation';
+import SpinningWheel from './src/screens/SpinningWheel';
+import Onboarding from './src/screens/Onboarding';
+import StickyHeader from './src/screens/StickyHeader';
+import {
+  initialiseApp,
+  getFCMTOken,
+  notificationHelper,
+  requestUserPermission,
+} from './src/constants/utils/pushNotifhelper';
+import {firebase} from '@react-native-firebase/messaging';
 const STATUSBAR_HEIGHT = getStatusBarHeight();
 const App = () => {
+  useEffect(() => {
+    // console.log(firebase.apps);
+    // console.log({
+    //   firebaseapps: firebase.apps,
+    // });
+    initialiseApp();
+    //  Platform.OS === 'ios' ? iosConfig : androidConfig,
+  }, []);
+
+  // useEffect(() => {
+  //   requestUserPermission();
+  // }, []);
+  useEffect(() => {
+    getFCMTOken();
+    // notificationHelper();
+  }, []);
+
   return (
-    <MessageHome />
+    // <FlatlistAnimation />
+    // <Onboarding />
+    <StickyHeader />
 
     // <View
     //   style={{

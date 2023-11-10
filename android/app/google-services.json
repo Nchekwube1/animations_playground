@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "766309564826",
+    "project_id": "pushnotiftest-8624a",
+    "storage_bucket": "pushnotiftest-8624a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766309564826:android:8c7e105d458d7427fafa23",
+        "android_client_info": {
+          "package_name": "com.playground"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAExes8dwhi8FyfX3thsEBGiNVdg1RBZr4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
